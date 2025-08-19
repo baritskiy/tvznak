@@ -1,0 +1,181 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scrollbar-width: none;
+
+}
+@font-face {
+	font-family: golos;
+	src: url(../fonts/golos-text_demibold.ttf);
+}
+body {
+	font-family: golos;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+.scene {
+	height: 200vh;
+	scrollbar-width: none;
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+
+}
+
+.layer {
+	height: 100vh;
+	width: 100vw;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	display:flex;
+    align-items: center;
+	justify-content: center;
+	animation-timeline:scroll();
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-range: 0 30vh;
+	scrollbar-width: none;
+	scroll-snap-align: start;
+
+}
+.layer:nth-child(1) { 
+	animation-name: bgr 
+}
+@keyframes bgr {
+	0% { 
+	scale: 1.5; 
+	filter: blur(5px);
+	transform: translateY(-600px);
+	}
+	100% { 
+	scale: 2; 
+	filter: blur(2px);
+	transform: translateY(-600px);
+		}
+} 
+.layer:nth-child(2) { animation-name: animation-1 }
+@keyframes animation-1 { 
+	0% { 
+		scale: 0.5; 
+		filter: blur(15px); 
+		transform: translateX(50px) translateY(100px);
+		} 
+	25% { 
+		scale: 0.7; 
+		filter: blur(5px); 
+		transform: translateX(50px) translateY(100px);
+		} 
+	50% { 
+		scale: 1.2; 
+		filter: blur(0px); 
+		transform: translateX(200px) translateY(100px);
+		} 	
+	100% { 
+		scale: 1.2; 
+		filter: blur(0px); 
+		transform: translateX(200px) translateY(100px);
+		} 	
+}
+.layer:nth-child(3) { animation-name: animation-2 }
+@keyframes animation-2 { 
+	0% { 
+		scale: 0.7; 
+		filter: blur(2px); 
+		transform: translateX(0px) translateY(0px);
+		} 
+	25% { 
+		scale: 1; 
+		filter: blur(0px); 
+		transform: translateX(-0px) translateY(0px);
+		} 
+	50% { 
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(50px) translateY(0px);
+		} 	
+	100% { 
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(50px) translateY(0px);
+		} 	
+}
+.layer:nth-child(4) { animation-name: animation-3; filter: blur(0px); }
+@keyframes animation-3 { 
+	25% { 
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(-75px) translateY(0px);
+		}
+	50% { 
+		scale: 20; 
+		filter: blur(5px); 
+		transform: translateX(-75px) translateY(0px);
+		opacity: 100;
+		}
+	100% { 
+		scale: 20; 
+		filter: blur(5px); 
+		transform: translateX(255px) translateY(0px);
+		opacity: 0;
+		}		
+}
+.layer:nth-child(5) { animation-name: animation-4; filter: blur(0px); }
+@keyframes animation-4 { 
+	25% {
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(-150px) translateY(0px);
+
+		}
+	50% {
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(-150px) translateY(0px);
+		opacity: 0;
+		}
+	100% {
+		scale: 6; 
+		filter: blur(5px); 
+		transform: translateX(-150px) translateY(0px);
+		opacity: 0;
+		}
+}
+.layer:nth-child(6) { animation-name: animation-5; filter: blur(0px); }
+@keyframes animation-5 { 
+	25% {
+		scale: 20; 
+		filter: blur(10px); 
+		transform: translateY(500px);
+		}
+	50% {
+		scale: 20; 
+		filter: blur(10px); 
+		transform: translateY(500px);
+		opacity: 0;
+		}
+	100% {
+		scale: 20; 
+		filter: blur(10px); 
+		transform: translateY(500px);
+		opacity: 0;
+		}
+}
+
+
+
+.layer__text {
+	padding: 5vh 5vw;
+	filter: blur(0px) brightness(50%) sepia(100%) contrast(240%) hue-rotate(50deg);
+	animation-timeline: scroll();
+	animation-timing-function: step-end;
+	animation-fill-mode: both;
+	animation-range: 0 25vh;
+	animation-name: animated-geo;
+	transition:linear;
+	
+}
+@keyframes animated-geo { 
+	to { opacity: 100;}
+}
+
